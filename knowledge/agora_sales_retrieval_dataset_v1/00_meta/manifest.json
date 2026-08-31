@@ -1,0 +1,12 @@
+{
+  "dataset_name": "agora_sales_retrieval_dataset_v1",
+  "version": "1.0",
+  "built_on": "2026-08-28",
+  "company": "Agora, Inc.",
+  "ticker": "API",
+  "filing_model": "20-F annual; 6-K / earnings materials quarterly-current",
+  "markdown_documents": 32,
+  "registered_sources": 16,
+  "primary_language": "Korean with English domain terminology",
+  "design": "human-readable Markdown retrieval corpus without Vector DB"
+}

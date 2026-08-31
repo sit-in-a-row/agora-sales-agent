@@ -1,0 +1,78 @@
+{
+  "luxury_retail": {
+    "company_docs": [
+      "CURRENT_STRATEGY_2026",
+      "KOREA_BUSINESS_CONTEXT"
+    ],
+    "product_docs": [
+      "PRODUCT_CONVERSATIONAL_AI",
+      "PRODUCT_RTC_MEDIA"
+    ],
+    "case_docs": [
+      "CASE_GLOBAL_SALESROOM"
+    ],
+    "note": "v1에는 Korea luxury-specific Agora deployment가 없음. Prospect Korea research와 adjacent evidence를 결합."
+  },
+  "bfsi": {
+    "company_docs": [
+      "CURRENT_STRATEGY_2026"
+    ],
+    "product_docs": [
+      "PRODUCT_RTC_MEDIA",
+      "PRODUCT_CONVERSATIONAL_AI",
+      "PRODUCT_SECURITY_COMPLIANCE"
+    ],
+    "case_docs": [
+      "CASE_GLOBAL_KRIYAM"
+    ]
+  },
+  "education": {
+    "company_docs": [
+      "KOREA_BUSINESS_CONTEXT"
+    ],
+    "product_docs": [
+      "PRODUCT_RTC_MEDIA",
+      "PRODUCT_CONVERSATIONAL_AI"
+    ],
+    "case_docs": [
+      "CASE_KR_HANYANG",
+      "CASE_GLOBAL_ENGLISHCENTRAL"
+    ]
+  },
+  "aiot_robotics": {
+    "company_docs": [
+      "KOREA_BUSINESS_CONTEXT"
+    ],
+    "product_docs": [
+      "PRODUCT_PHYSICAL_AI_IOT"
+    ],
+    "case_docs": [
+      "CASE_KR_XOSOFT",
+      "CASE_GLOBAL_MIKO"
+    ]
+  },
+  "market_research": {
+    "company_docs": [
+      "CURRENT_STRATEGY_2026",
+      "KOREA_BUSINESS_CONTEXT"
+    ],
+    "product_docs": [
+      "PRODUCT_CONVERSATIONAL_AI"
+    ],
+    "case_docs": [
+      "CASE_KR_SMARTTECH_SURVEY"
+    ]
+  },
+  "sales_marketing": {
+    "company_docs": [
+      "CURRENT_STRATEGY_2026"
+    ],
+    "product_docs": [
+      "PRODUCT_CONVERSATIONAL_AI"
+    ],
+    "case_docs": [
+      "CASE_GLOBAL_SALESROOM",
+      "CASE_KR_SMARTTECH_SURVEY"
+    ]
+  }
+}

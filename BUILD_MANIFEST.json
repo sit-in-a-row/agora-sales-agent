@@ -1,0 +1,481 @@
+{
+  "artifact": "Agora Sales Agent Web App",
+  "version": "1.6.0",
+  "generated_at_utc": "2026-08-31T09:17:12Z",
+  "notion_data_source_id": "3cdcd049-9633-8060-b588-000bf406a511",
+  "features": [
+    "human-controlled deterministic email v2",
+    "Notion exact lead load and company research reuse",
+    "Notion auto upsert and manual draft update",
+    "Notion backfill from artifacts.zip/final_leads.json",
+    "Impt company-size presets",
+    "Quality/Normal/Trash all draft generation",
+    "localStorage session recovery and API transcript persistence"
+  ],
+  "qa": [
+    "python compileall PASS",
+    "frontend node --check PASS",
+    "FastAPI health/root PASS",
+    "Final workbook preset counts PASS",
+    "DEMO pipeline 5 leads PASS",
+    "Notion store in-memory create/update/load/match PASS",
+    "Notion import endpoint JSON/ZIP PASS"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 42,
+      "sha256": "4fc337e97799bdf39aec9d80d52946168c9e8c9d02cd381013987eafb104fe50"
+    },
+    {
+      "path": "CHANGELOG_v1.1.md",
+      "bytes": 597,
+      "sha256": "8cb7da4addb7f551a8d0530d84d394fc56c12dedb61e85fe5ba3fdb05931116d"
+    },
+    {
+      "path": "CHANGELOG_v1.2.md",
+      "bytes": 2632,
+      "sha256": "7a7ca7306e135677eead3a5e68533cb9337a1a358dbe6291d41712e54fbcaea1"
+    },
+    {
+      "path": "CHANGELOG_v1.3.md",
+      "bytes": 1628,
+      "sha256": "ac2ce1116bd551c567a3ef61db22c47fd2bacd50bd5b3616de309412f2e317de"
+    },
+    {
+      "path": "CHANGELOG_v1.4.md",
+      "bytes": 1421,
+      "sha256": "522d05a9305835155387f11d1271546c1cc648d2823fc75e4e9f8f4946fd903f"
+    },
+    {
+      "path": "CHANGELOG_v1.5.md",
+      "bytes": 2170,
+      "sha256": "c22a0ae265ddd9cec1e52422979c06f5a7d64363fe2b3788d1803dff7ef8369f"
+    },
+    {
+      "path": "CHANGELOG_v1.6.md",
+      "bytes": 1900,
+      "sha256": "2540ae939887e1501344ec60bc5048c6d57d54453dddd7bbe309922c3a9d1ca2"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7140,
+      "sha256": "515837b6108307cfae0213f1161518abc6d0cdf27293efa0bc4eb022e6865ab1"
+    },
+    {
+      "path": "app/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "app/agents/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "app/agents/mock_provider.py",
+      "bytes": 14534,
+      "sha256": "1229302b5bf523a0ad5c5d64a74128d2e962de0d9d5c99f412c302abf5da6e6d"
+    },
+    {
+      "path": "app/agents/prompts.py",
+      "bytes": 1873,
+      "sha256": "e0c63301b250d2cf68c6a8e78324f75b5d98484c946e22c07fc5a4af37aac063"
+    },
+    {
+      "path": "app/agents/provider.py",
+      "bytes": 8399,
+      "sha256": "85e4af386ee28b8836287b92db0cc95ef0d47fba9d4484237cbc5b8b9d149cea"
+    },
+    {
+      "path": "app/config.py",
+      "bytes": 1141,
+      "sha256": "1351c88d94fe3c1616998aa2e921a6bf60d4aab4b18fb5641d3da37be66eb040"
+    },
+    {
+      "path": "app/job_store.py",
+      "bytes": 1949,
+      "sha256": "be99a08cdb111b7e5840439a6d49c8daa39a59a56878ac4df1a2f73a24c11dfe"
+    },
+    {
+      "path": "app/main.py",
+      "bytes": 25853,
+      "sha256": "cf1cb711f6e5f8acc1f742fae9eda4862cbcafd9000d76a96532952f5d6c3280"
+    },
+    {
+      "path": "app/models.py",
+      "bytes": 11711,
+      "sha256": "91f006080c2a7ed8957d0131dcf941ef6d79a2cea86762bb36d76f49cbc9e70f"
+    },
+    {
+      "path": "app/notion_store.py",
+      "bytes": 23403,
+      "sha256": "1e7133b4629659b5d6809248218e8eecb608dffb530d244723d9201348eb6271"
+    },
+    {
+      "path": "app/pipeline/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "app/pipeline/email_template.py",
+      "bytes": 5448,
+      "sha256": "fc6f8eb785ae0cf3853dc82cee7befa9e0b913a49a5d04bc830435f35084d4f1"
+    },
+    {
+      "path": "app/pipeline/grouping.py",
+      "bytes": 4033,
+      "sha256": "59722af0f846f07ef72855ee603e4b66fa5fc0d9f599cf495844badd38c90fe9"
+    },
+    {
+      "path": "app/pipeline/orchestrator.py",
+      "bytes": 52860,
+      "sha256": "36d8edbdef04675b89de91f00223f83d5811ac372496172226f1875437e53919"
+    },
+    {
+      "path": "app/pipeline/retrieval.py",
+      "bytes": 9740,
+      "sha256": "f2f80f11736cd15a9aef0e7e88a35a3df1116ed338fd0243106caff273ab08fb"
+    },
+    {
+      "path": "app/pipeline/workbook.py",
+      "bytes": 13744,
+      "sha256": "e7631d986ed202fc4b57726d5553024a944f5f58dc1318601f009cc318961ae1"
+    },
+    {
+      "path": "app/pipeline/xlsx_io.py",
+      "bytes": 10881,
+      "sha256": "950ce4362939905b0301cdaf6b08c87bbbe906317d579671de3541e2584eba03"
+    },
+    {
+      "path": "app/static/app.js",
+      "bytes": 45457,
+      "sha256": "e34358824560dc6abb2b809cb76f4168a2eb227d0e8c09b1f425dcdc8fb9fd95"
+    },
+    {
+      "path": "app/static/index.html",
+      "bytes": 14986,
+      "sha256": "88c5b726ecde9d694c9dd5f8e98c9bdbf98fdcbe4d321475d91a02cbc2946c0a"
+    },
+    {
+      "path": "app/static/styles.css",
+      "bytes": 23753,
+      "sha256": "d70401d8a726416ce7360edbc51f80ef98fc0cebdb5340c5e9a1e6a2f6ff6ad5"
+    },
+    {
+      "path": "config/default_config.json",
+      "bytes": 684,
+      "sha256": "1103777177c13a86cc392bcd3514263f6c990d1c14ce3f2f6a4102cbbc70ca3c"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 1921,
+      "sha256": "3a7ff75b8b746485ec8bca97beb32002cc0a073055dc48773acc60ae0be1ab50"
+    },
+    {
+      "path": "docs/email_guides/agora_deterministic_template_guide.md",
+      "bytes": 21675,
+      "sha256": "bb7a010d14e8044587ff1978a0c19bd85b95fd92c0a6cff455745fd79474d140"
+    },
+    {
+      "path": "docs/email_guides/agora_sales_email_style_guide.md",
+      "bytes": 31576,
+      "sha256": "3dd46df70a03457457d2c2bff9cd56b7562ac17aaf79e7e31816abfd1b246fb2"
+    },
+    {
+      "path": "docs/input_mapping_verified.md",
+      "bytes": 1488,
+      "sha256": "309f09a38d1a06edb24558c9c1f1ab8e2c61a403c7e9cb3d558e666c4ea1ebca"
+    },
+    {
+      "path": "docs/openai_api_notes.md",
+      "bytes": 1170,
+      "sha256": "c4810bca90683bff16854c2adad17de3094d66ecb984dd8b5b2d1a53a95790c0"
+    },
+    {
+      "path": "docs/prompts/01_entity_resolver_system.md",
+      "bytes": 1879,
+      "sha256": "20d032e08538ac70f356cf04e90ed7cd54c35763b1ef02e049d5d042cc4e6754"
+    },
+    {
+      "path": "docs/prompts/01b_entity_resolver_web_system.md",
+      "bytes": 793,
+      "sha256": "a9bf6bb8751c62b3af32cf5bf5deb719f29ca82172440d477afc317a4032048e"
+    },
+    {
+      "path": "docs/prompts/02_account_researcher_system.md",
+      "bytes": 8354,
+      "sha256": "a48bd018ffe91c7a6f8397b8b7ee192323203d0c64296434e4410cf4034a0ad8"
+    },
+    {
+      "path": "docs/prompts/03_lead_scorer_system.md",
+      "bytes": 3612,
+      "sha256": "c2826e9e037fa57cc4c0b78d270da90d93f6141fe4d9a89d12e24d1f136eecea"
+    },
+    {
+      "path": "docs/prompts/04_sales_strategist_system.md",
+      "bytes": 3728,
+      "sha256": "3c3eb74e0ab5bc9c52a4bb40682fed3833804cc6d968d54df5c1247d67357654"
+    },
+    {
+      "path": "docs/prompts/05_email_writer_system.md",
+      "bytes": 1640,
+      "sha256": "79c5d81669b097aaf92d7e1c94b0c0a78104e79487aefb7a9c3da9cc801c07b6"
+    },
+    {
+      "path": "docs/prompts/06_sales_reviewer_system.md",
+      "bytes": 2471,
+      "sha256": "dd4641c1437ec017d8ebe63d97d00cedb7f7c2941b6ad17345728fe0bb65c85d"
+    },
+    {
+      "path": "docs/retrieval/agora_corpus_retrieval_policy.md",
+      "bytes": 1205,
+      "sha256": "ff779d1e499dbe85b4680ee34a19fe422d21082ea79fcc20f5d79283893aa1e2"
+    },
+    {
+      "path": "docs/retrieval/company_research_policy.md",
+      "bytes": 1348,
+      "sha256": "2453b0fe17021b33a20578dd9497fa5721ca3edac5d05d96b89bde4e75b6a4c3"
+    },
+    {
+      "path": "docs/retrieval/evidence_ledger_policy.md",
+      "bytes": 909,
+      "sha256": "4c018beb82671a2ced34068bb44b93a6921657aeea1374baee81ac25096fff4d"
+    },
+    {
+      "path": "docs/scoring/lead_scoring_rubric.md",
+      "bytes": 2829,
+      "sha256": "88cb9cd971619d3e9489d366e2dcfa3552d80fe092f3138e76d624ee987342d3"
+    },
+    {
+      "path": "docs/scoring/reviewer_rubric.md",
+      "bytes": 826,
+      "sha256": "13716f926c9b25389005f924142128f475b786a287362b19369454b1da13c860"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/HOW_TO_RETRIEVE.md",
+      "bytes": 859,
+      "sha256": "90aad5b5b28f4783f8162ff4c0f9ef9c28a4c63f8067846b85fcd22aad31e647"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/document_index.csv",
+      "bytes": 4511,
+      "sha256": "fc06f0dd3f922eb1f832b8f53e6f394a2255cf4130ce2a70637a67503c3cdca5"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/manifest.json",
+      "bytes": 422,
+      "sha256": "614ec07f34a8bc69829ee46136f46acbf0b4394feb3e5fdaaf271a085e69ddce"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/quick_retrieval_map.json",
+      "bytes": 1606,
+      "sha256": "7c50276cf8ade20c27ca5de075eebce38b3aa843c90efbe79304d40630ff5898"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/retrieval_conventions.md",
+      "bytes": 981,
+      "sha256": "55caffd0f21e11c9cc3075b88bd78e8a7e3f761a772685eae2a14738c417d2ec"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/source_registry.csv",
+      "bytes": 3833,
+      "sha256": "f55664cacff663267c38e6cd375c7a99214c2b1882beceb14a6c8fca499f7b04"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/00_meta/source_registry.json",
+      "bytes": 6457,
+      "sha256": "41b0e31c7183bb679a23bafbb8797874e3f78efeca21a5e4cb2ed1ef614d9f0a"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/01_company/claims_and_guardrails.md",
+      "bytes": 1482,
+      "sha256": "66ee083e4334f204aa77d1f21cbf7c1f98ed354e07838f802aac6cd612a6aae7"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/01_company/company_profile.md",
+      "bytes": 1113,
+      "sha256": "22f2bc965537c4ab390383bf0d6bac33e46d19bdd8be3549c34c28d3f09552af"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/01_company/current_strategy_2026.md",
+      "bytes": 1330,
+      "sha256": "64dc7c087d2d1a2d4b82153f769189e500b46e1a359143607f225ccd2a86a2b3"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/01_company/financial_snapshot.md",
+      "bytes": 928,
+      "sha256": "75c026908f2b883a284d7e2987f83e3ab7f1cabb34bf39cb378dae110eef0027"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/01_company/korea_business_context.md",
+      "bytes": 1554,
+      "sha256": "4acd3cc808bf60001646d528b26320fa80f279409601ca4d1741eac1973f6187"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/02_filings/2025_20F_summary.md",
+      "bytes": 636,
+      "sha256": "6d82c741b88fb3ed13b6cd71ac3e74c668397890216871a15d4b37cdbe094dad"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/02_filings/2026_Q1_summary.md",
+      "bytes": 799,
+      "sha256": "a0cc532b74c2f329a900c3d5de4ec6056e4c4e0eb012512e75930a88a611b0d4"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/02_filings/2026_Q2_summary.md",
+      "bytes": 866,
+      "sha256": "85b742d3a7672e6c501614454eecacfcc9643fa5dada27d769864bb2ffe2965f"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/03_products/conversational_ai.md",
+      "bytes": 1217,
+      "sha256": "41de97e7046644b7168af4ac4329855e0e373f67e2caed290190e86d768bacf3"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/03_products/physical_ai_iot.md",
+      "bytes": 908,
+      "sha256": "f00f656dbf3956ab66a9ef7bd2ea296c10b3e1e73d5bef4559d7dffadb33d698"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/03_products/product_portfolio.md",
+      "bytes": 700,
+      "sha256": "a00f2181c8f4801b167e7d33d2565e30dd65d268ef6effd63c2462036c4ffb67"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/03_products/rtc_media.md",
+      "bytes": 785,
+      "sha256": "603e15cc18518d428d148800ae16931863f39f35ad3133fc2b3b29705f563562"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/03_products/security_compliance.md",
+      "bytes": 612,
+      "sha256": "9cffe310933eac1f1cb80d3bf60048bb5e55c28e929f37284081ea9efe5f7171"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/global/englishcentral_education.md",
+      "bytes": 702,
+      "sha256": "61f6d01823a9dcedb28e36989eeb0bb8cd7178ae01ad0d9e8ef222667d89c75a"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/global/kriyam_bfsi.md",
+      "bytes": 656,
+      "sha256": "76e0af287a8600f5c70164b9f79931b3e5edb19ecc481cf28106dd5e4f9648b4"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/global/miko_iot.md",
+      "bytes": 611,
+      "sha256": "92a967a6b8ec3bd5c8d44ec3c02d459cc41184e54cc3ae2aed481fe96a752a6a"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/global/salesroom_sales_engagement.md",
+      "bytes": 836,
+      "sha256": "88333b9b2bcf826eee258d771b91a133871928e504666f1d4cfc520d5950b26a"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/korea/hanyang_university_translation.md",
+      "bytes": 1077,
+      "sha256": "ed2a9ccf912c0d727d6fc5c1efe8b8752a4f0976d84536b9272dec2b82edda28"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/korea/smarttech_voice_survey.md",
+      "bytes": 883,
+      "sha256": "d7342de481444a5b3ba6ce78d19ac72cfe9584bd69007e5c2d2f7659626ee7f6"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/korea/soma_virtual_office.md",
+      "bytes": 711,
+      "sha256": "eacd01a0c9e8fc21889659aa97cfacc9f15a999a64269cad04e9cfc79ff67fdf"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/04_cases/korea/xosoft_aiot_mou.md",
+      "bytes": 785,
+      "sha256": "404591595b5da9bf30386cdb20f46d8227900af1eba301802f19d6cf11ef0355"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/05_sales/email_generation_context.md",
+      "bytes": 1144,
+      "sha256": "b5810873be2181ce8abe66aa2d4b7e1ee5ace35864519ac6d888a67772362b6b"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/05_sales/evidence_selection_rules.md",
+      "bytes": 978,
+      "sha256": "d884fb149ce7fc138c19aa6446ebfc8f0a1f533d9d8d830890fd1831555b3301"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/05_sales/industry_solution_map.md",
+      "bytes": 1156,
+      "sha256": "a1b7127398032ad8cff00345049fa4ba3c7fc987c496c9dd73e5c12c1ce597fd"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/05_sales/persona_angle_map.md",
+      "bytes": 831,
+      "sha256": "62fe92058db40da7b9f9ad822b673343eacc88d16797258d53f6a9996b363984"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/05_sales/sales_claim_library.md",
+      "bytes": 1837,
+      "sha256": "01c6fa88cce6fec7d2ae4bd01d627048c78c7495b03550d3c5636c42b6a001f2"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/06_examples/bfsi_retrieval_example.md",
+      "bytes": 495,
+      "sha256": "a619c69b354427f5ed3e7f5ffa74b8c5800909f0c26101485016ad453957035d"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/06_examples/education_retrieval_example.md",
+      "bytes": 493,
+      "sha256": "82e6107e38ad19148d47de9a0ae4b853d25b21a2ea99d98dcaeda2942f88b8f7"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/06_examples/luxury_retail_retrieval_example.md",
+      "bytes": 861,
+      "sha256": "fe11d3ceba8237e3ad2b1d0437894190728609b5f5ea4c2b4f30343ff322a067"
+    },
+    {
+      "path": "knowledge/agora_sales_retrieval_dataset_v1/README.md",
+      "bytes": 1458,
+      "sha256": "b656185e418ccdee1cc4492b35fbe99b3e78d40113e96c56e4d7b18aa1df5f05"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 115,
+      "sha256": "3a4d8258b3b62d25841ff057bbf61cd30be7dfe9b5928d2b78396697a3600af2"
+    },
+    {
+      "path": "run.bat",
+      "bytes": 30,
+      "sha256": "223d882691ae149154aef1f8c74a1a7b75d87a5955b04077dbf316694208b529"
+    },
+    {
+      "path": "run.py",
+      "bytes": 1379,
+      "sha256": "5d2b4e42f427ad9231621486f383dc74791c57a73d9c69b008ea41309744a881"
+    },
+    {
+      "path": "run.sh",
+      "bytes": 115,
+      "sha256": "f20937ac03b0e4f06012bb9046e81bc7eb105ff4f0ec92d7ee9d481c265b2548"
+    },
+    {
+      "path": "setup_and_run.bat",
+      "bytes": 184,
+      "sha256": "a88110a5c40567b80e27a6eec159af7ef47a636b207bff26b9e57d1ab57a714b"
+    },
+    {
+      "path": "setup_and_run.sh",
+      "bytes": 249,
+      "sha256": "40ee4a902940618b7916ba075801b1b11dc5e83edc331935d35b3a7ba844f084"
+    },
+    {
+      "path": "tests/notion_store_test.py",
+      "bytes": 6574,
+      "sha256": "ec4551288e9400c3d43f89cc44039f99246b0b997d69c4d9b923c754b100d288"
+    },
+    {
+      "path": "tests/smoke_test.py",
+      "bytes": 1087,
+      "sha256": "a12eafe059e11594cbe8396683d13d3dc38e3bd9ddb32a2106472653efda2dea"
+    }
+  ]
+}

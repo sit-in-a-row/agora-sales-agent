@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agora Sales Intelligence</title>
+  <link rel="stylesheet" href="/static/styles.css?v=1.6.0" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark">A</div><div><strong>Agora</strong><span>Sales Intelligence</span></div></div>
+      <nav>
+        <button class="nav-item active" data-target="runSection"><span>01</span>새 분석</button>
+        <button class="nav-item" data-target="resultsSection"><span>02</span>실시간 결과</button>
+        <button class="nav-item" data-target="reviewSection"><span>03</span>사람 검수</button>
+      </nav>
+      <div class="sidebar-note"><b>v1.6</b><p>Notion 영속 저장 · 기존 리서치 재사용 · Human-controlled Deterministic 메일</p></div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><div class="eyebrow">B2B LEAD WORKBENCH</div><h1>행사 방문객 → 영업 리드 자동화</h1></div>
+        <div class="top-actions"><button class="ghost danger" id="clearLocalCache" type="button">브라우저 캐시 지우기</button><div class="status-pill" id="serverStatus"><i></i>Backend 확인 중</div></div>
+      </header>
+
+      <section id="runSection" class="section visible">
+        <div class="hero-grid">
+          <article class="panel upload-panel">
+            <div class="panel-head"><div><span class="step">1</span><h2>방문자 파일</h2></div><span class="muted">.xlsx / .csv</span></div>
+            <label class="dropzone" id="dropzone">
+              <input id="fileInput" type="file" accept=".xlsx,.csv" />
+              <div class="drop-icon">⇧</div>
+              <strong id="fileLabel">파일을 드래그하거나 클릭해서 선택</strong>
+              <span>업로드 후 먼저 표 형태로 확인하고 필요한 row만 골라 실행</span>
+            </label>
+            <div id="inspection" class="inspection empty">파일을 선택하면 시트·헤더·B2B 후보를 먼저 검사한다.</div>
+          </article>
+
+          <article class="panel settings-panel">
+            <div class="panel-head"><div><span class="step">2</span><h2>API / 실행 설정</h2></div></div>
+            <div class="field">
+              <label>OpenAI API Key</label>
+              <div class="secret-wrap"><input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" /><button id="toggleKey" type="button">보기</button></div>
+              <div class="inline-option"><label><input id="rememberApiKey" type="checkbox" /> 이 브라우저에 Key 저장</label><small>기본 OFF. 저장 시 localStorage에 남음.</small></div>
+            </div>
+            <div class="grid2">
+              <div class="field"><label>동시 API 호출</label><select id="concurrency"><option>2</option><option selected>4</option><option>6</option><option>8</option></select></div>
+              <div class="field"><label>최대 Lead <span class="hint">preset 전체 실행 시</span></label><input id="maxLeads" type="number" min="0" value="6" /></div>
+            </div>
+            <div class="grid2"><div class="field"><label>보낸 사람 <span class="hint">템플릿 고정</span></label><input id="senderName" type="text" value="박세빈" disabled /></div><div class="field"><label>직함 <span class="hint">템플릿 고정</span></label><input id="senderTitle" type="text" value="한국 매니저" disabled /></div></div>
+            <div class="field"><label>서명 <span class="hint">Deterministic Guide 고정</span></label><input id="senderSignature" type="text" value="박세빈 · Sales Manager | Agora" disabled /></div>
+            <label class="demo-toggle"><input id="quickMode" type="checkbox" checked /><span></span><div><b>빠른 미리보기</b><small>실제 API · 보완검색/AI 최종 Reviewer 생략 · Quality는 사람 검수</small></div></label>
+            <label class="demo-toggle"><input id="demoMode" type="checkbox" /><span></span><div><b>DEMO 모드</b><small>API 호출 없이 UI/파이프라인 검증</small></div></label>
+          </article>
+        </div>
+
+        <article class="panel notion-panel">
+          <div class="panel-head"><div><span class="step">3</span><h2>Notion 영업 DB</h2></div><div class="notion-status" id="notionStatus">연결 안 됨</div></div>
+          <div class="notion-grid">
+            <div class="field">
+              <label>Notion API Key</label>
+              <div class="secret-wrap"><input id="notionApiKey" type="password" placeholder="ntn_... / secret_..." autocomplete="off" /><button id="toggleNotionKey" type="button">보기</button></div>
+              <div class="inline-option"><label><input id="rememberNotionKey" type="checkbox" /> 이 브라우저에 Key 저장</label><small>기본 OFF · 서버 파일에는 저장하지 않음.</small></div>
+            </div>
+            <div class="field notion-db-field">
+              <label>Notion Database URL</label>
+              <input id="notionDatabaseUrl" type="text" value="https://app.notion.com/p/3cdcd049963380f794a8faea1bedcab5?v=3cdcd04996338020a2dc000cfd5ee330" />
+              <small>Agora DB의 Sales Research 데이터베이스. Integration에 해당 DB를 Share해야 한다.</small>
+            </div>
+          </div>
+          <div class="notion-actions">
+            <button class="ghost" id="testNotion" type="button">연결 테스트</button>
+            <button class="ghost" id="refreshNotionStatus" type="button">현재 표와 대조</button>
+            <label><input id="notionAutoSync" type="checkbox" checked /> 생성 결과 자동 저장</label>
+            <label><input id="notionReuseResearch" type="checkbox" checked /> 기존 회사 Research 재사용</label>
+            <span id="notionMatchSummary" class="muted">Notion 연결 후 미생성 / 기존 저장 상태를 표시한다.</span>
+          </div>
+          <div class="notion-import">
+            <div><b>기존 결과 Backfill</b><small>이전 버전의 artifacts.zip 또는 final_leads.json을 Notion에 저장한다. ZIP에 CompanyResearch 원본이 있으면 재사용 cache도 함께 보존한다.</small></div>
+            <label class="ghost notion-import-file">파일 선택<input id="notionImportFile" type="file" accept=".zip,.json" /></label>
+            <span id="notionImportFileName" class="muted">파일 미선택</span>
+            <button class="ghost" id="importNotionArtifact" type="button">Notion으로 가져오기</button>
+            <span id="notionImportStatus" class="muted"></span>
+          </div>
+        </article>
+
+        <article class="panel preview-panel">
+          <div class="panel-head"><div><span class="step">4</span><h2>입력 데이터 미리보기 / Row 선택</h2></div><div class="preview-status" id="previewStatus">파일 선택 필요</div></div>
+          <div class="preview-toolbar">
+            <div class="field compact"><label>Preset / 시트</label><select id="sourceMode">
+              <option value="impt_all" selected>Impt (all)</option>
+              <option value="impt_large">Impt (대기업)</option>
+              <option value="impt_mid">Impt (중견기업)</option>
+              <option value="impt_startup">Impt (스타트업)</option>
+              <option value="impt_large_mid">Impt (대기업 + 중견기업)</option>
+              <option value="impt_large_startup">Impt (대기업 + 스타트업)</option>
+              <option value="impt_mid_startup">Impt (중견기업 + 스타트업)</option>
+              <option value="main">Main</option>
+            </select></div>
+            <div class="field compact"><label>실행 범위</label><select id="runScope"><option value="selected" selected>체크한 Row만</option><option value="all">현재 Preset 전체</option></select></div>
+            <div class="field compact grow"><label>표 검색</label><input id="previewSearch" type="search" placeholder="회사 / 이름 / 부서 / 직함 검색" /></div>
+            <div class="preview-buttons"><button class="ghost" id="selectVisible" type="button">표시 Row 선택</button><button class="ghost" id="clearSelected" type="button">선택 해제</button><button class="ghost" id="refreshPreview" type="button">표 새로고침</button></div>
+          </div>
+          <div class="preview-meta"><b id="selectedCount">0개 선택</b><span>선택 row는 그룹핑 전에 먼저 필터링된다. 여러 명이 같은 팀이면 이후 하나의 lead unit으로 묶일 수 있다.</span></div>
+          <div class="preview-table-wrap">
+            <table class="preview-table"><thead><tr><th class="check-col">선택</th><th>Notion</th><th>Row</th><th>방문시간</th><th>성명</th><th>회사</th><th>부서</th><th>직함</th><th>기업 종류</th><th>구분</th><th>직위</th><th>관심/목적</th></tr></thead><tbody id="previewTable"><tr class="placeholder"><td colspan="12">업로드한 데이터를 먼저 표로 보여준다.</td></tr></tbody></table>
+          </div>
+        </article>
+
+        <div class="hero-grid lower-grid">
+          <article class="panel">
+            <div class="panel-head"><div><span class="step">5</span><h2>Deterministic 메일 정책</h2></div><span class="muted">v1.6</span></div>
+            <div class="field"><label>추가 참고 메모</label><textarea id="emailStyleReference" rows="9" placeholder="v1.6은 회사 리서치를 메일에 자동 삽입하지 않습니다. Draft textarea에서 사람이 회사별 맥락을 직접 추가하고 저장하면 Notion에도 반영됩니다."></textarea></div>
+            <div class="file-line"><label class="ghost file-btn">참고 파일 불러오기<input id="emailStyleFile" type="file" accept=".txt,.md,.csv,.eml" /></label><span id="styleFileName" class="muted">.txt / .md / .csv / .eml</span></div>
+          </article>
+          <article class="panel">
+            <div class="panel-head"><div><span class="step">6</span><h2>추가 Agora Case</h2></div><span class="muted">동적 확장</span></div>
+            <p class="panel-copy">기존 `knowledge/04_cases`에 MD를 추가해도 자동 발견한다. 또는 이번 실행에만 사용할 case 문서를 여기서 여러 개 추가할 수 있다.</p>
+            <label class="case-drop"><input id="caseFiles" type="file" accept=".md,.txt" multiple /><span>＋ Case 파일 선택</span><small>.md / .txt · 여러 개 가능</small></label>
+            <div id="caseFileList" class="case-file-list">추가 case 없음</div>
+          </article>
+        </div>
+
+        <article class="panel run-launch-panel">
+          <div><b id="launchSummary">파일과 실행 row를 선택해 주세요.</b><span id="restoreNote" class="muted"></span></div>
+          <button class="primary launch-primary" id="startBtn" disabled><span id="startBtnLabel">선택 Row 분석 시작</span> <span>→</span></button>
+        </article>
+
+        <article class="panel progress-panel" id="progressPanel">
+          <div class="panel-head"><div><span class="step">7</span><h2>실행 상태</h2></div><button class="ghost danger" id="cancelBtn" disabled>중단</button></div>
+          <div class="progress-meta"><div><b id="stageLabel">대기 중</b><span id="stageMessage">파일과 실행 row를 선택해 주세요.</span></div><strong id="progressPct">0%</strong></div>
+          <div class="progress-track"><div id="progressBar"></div></div>
+          <div class="pipeline-steps" id="pipelineSteps"><span data-stage="입력">입력</span><span data-stage="회사">Entity</span><span data-stage="그룹">Grouping</span><span data-stage="리서치">Research</span><span data-stage="자료">Retrieval</span><span data-stage="scoring">Scoring</span><span data-stage="전략">Strategy</span><span data-stage="초안">Draft</span><span data-stage="검수">Review</span></div>
+          <div class="live-grid"><div class="logbox"><div class="subhead">LIVE LOG</div><div id="log"></div></div><div class="summarybox"><div class="subhead">LIVE COUNTS</div><div class="metrics"><div><b id="countTotal">0</b><span>Total</span></div><div class="quality"><b id="countQuality">0</b><span>Quality</span></div><div class="normal"><b id="countNormal">0</b><span>Normal</span></div><div class="trash"><b id="countTrash">0</b><span>Trash</span></div><div class="manual"><b id="countManual">0</b><span>검수</span></div></div></div></div>
+          <div class="api-transcript-wrap">
+            <div class="api-transcript-head">
+              <div><div class="subhead">OPENAI API LIVE TRANSCRIPT</div><span>화면은 최근 250개 trace만 유지 · 전체 내역은 run 폴더의 JSON/JSONL에 계속 저장</span></div>
+              <div class="trace-actions"><label><input id="autoFollowTrace" type="checkbox" checked /> 자동 따라가기</label><a class="ghost trace-download disabled" id="downloadTraceJson">JSON</a><button class="ghost" id="clearApiTrace" type="button">화면만 지우기</button></div>
+            </div>
+            <div id="apiTranscript" class="api-transcript"><div class="api-empty">실제 API 호출이 시작되면 요청/응답이 순서대로 표시된다.</div></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="resultsSection" class="section">
+        <div class="results-head"><div><div class="eyebrow">LIVE OUTPUT</div><h2>리드 결과</h2><p>새로고침해도 현재 backend job이 살아 있으면 자동 복구한다.</p></div><div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter q" data-filter="QUALITY">Quality</button><button class="filter n" data-filter="NORMAL">Normal</button><button class="filter t" data-filter="TRASH">Trash</button></div></div>
+        <div class="download-row" id="downloadRow"></div>
+        <div class="table-wrap"><table><thead><tr><th>등급</th><th>회사 / 팀</th><th>사업가치</th><th>인원</th><th>점수</th><th>핵심 Angle</th><th>메일 상태</th><th></th></tr></thead><tbody id="leadTable"><tr class="placeholder"><td colspan="8">실행된 lead가 여기에 실시간으로 표시된다.</td></tr></tbody></table></div>
+      </section>
+
+      <section id="reviewSection" class="section">
+        <div class="results-head"><div><div class="eyebrow">MANDATORY HUMAN REVIEW</div><h2>Quality Sales 검수함</h2><p>Quality로 분류된 메일은 무조건 사람이 최종 확인한다.</p></div></div>
+        <div id="reviewCards" class="review-grid"><div class="empty-card">Quality lead가 생성되면 여기에 나타난다.</div></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="leadDialog"><div class="dialog-head"><div><span id="dialogBadge" class="badge">QUALITY</span><h2 id="dialogTitle">Lead</h2></div><button id="dialogClose">×</button></div><div id="dialogBody"></div></dialog>
+  <script src="/static/app.js?v=1.6.0"></script>
+</body>
+</html>

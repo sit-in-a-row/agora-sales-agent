@@ -1,0 +1,178 @@
+[
+  {
+    "source_id": "SEC_20F_2025",
+    "title": "Agora, Inc. Form 20-F for FY2025",
+    "publisher": "U.S. SEC",
+    "date": "2026-04-15",
+    "type": "regulatory_filing",
+    "url": "https://www.sec.gov/Archives/edgar/data/1802883/000119312526155920/api-20251231.htm",
+    "reliability": "primary_regulatory",
+    "notes": "Annual report for foreign private issuer; period ended 2025-12-31.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "IR_Q1_2026",
+    "title": "Agora, Inc. Reports First Quarter 2026 Financial Results",
+    "publisher": "Agora Investor Relations",
+    "date": "2026-05-26",
+    "type": "earnings_release",
+    "url": "https://investor.agora.io/news-releases/news-release-details/agora-inc-reports-first-quarter-2026-financial-results/",
+    "reliability": "primary_company",
+    "notes": "Q1 2026 unaudited results and Agent Studio launch commentary.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "IR_Q2_2026",
+    "title": "Agora, Inc. Reports Second Quarter 2026 Financial Results",
+    "publisher": "Agora Investor Relations",
+    "date": "2026-08-13",
+    "type": "earnings_release",
+    "url": "https://investor.agora.io/news-releases/news-release-details/agora-inc-reports-second-quarter-2026-financial-results",
+    "reliability": "primary_company",
+    "notes": "Latest quarterly results available at dataset cutoff.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "AGORA_PRODUCTS",
+    "title": "Agora Products",
+    "publisher": "Agora",
+    "date": "",
+    "type": "product_catalog",
+    "url": "https://www.agora.io/en/products/",
+    "reliability": "primary_company_marketing",
+    "notes": "Current product taxonomy.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "AGORA_CONV_AI",
+    "title": "Real-Time Conversational AI",
+    "publisher": "Agora",
+    "date": "",
+    "type": "product_page",
+    "url": "https://www.agora.io/en/conversational-ai/",
+    "reliability": "primary_company_marketing",
+    "notes": "Conversational AI positioning.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "AGORA_AI_SALES",
+    "title": "AI Sales & Marketing Agents",
+    "publisher": "Agora",
+    "date": "",
+    "type": "solution_page",
+    "url": "https://www.agora.io/en/solutions/ai-sales-marketing-agents/",
+    "reliability": "primary_company_marketing",
+    "notes": "Outbound engagement and lead qualification use cases.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "AGORA_AI_CS",
+    "title": "AI Customer Service Agents",
+    "publisher": "Agora",
+    "date": "",
+    "type": "solution_page",
+    "url": "https://www.agora.io/en/solutions/ai-customer-service-agents/",
+    "reliability": "primary_company_marketing",
+    "notes": "Customer service agent positioning.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "AGORA_DEVICE_KIT",
+    "title": "Agora Convo AI Device Kit",
+    "publisher": "Agora",
+    "date": "",
+    "type": "product_page",
+    "url": "https://www.agora.io/en/products/convoai-device-kit/",
+    "reliability": "primary_company_marketing",
+    "notes": "Conversational AI for IoT / connected devices.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "KR_HANYANG_2026",
+    "title": "Agora Powers Real-Time AI Translation for Hanyang University’s China MBA Program in Korea",
+    "publisher": "Agora Korea",
+    "date": "2026-04-24",
+    "type": "korea_customer_release",
+    "url": "https://www.agora.io/kr/news/agora-powers-real-time-ai-translation-for-hanyang-universitys-china-mba-program-in-korea/",
+    "reliability": "primary_company",
+    "notes": "Korea deployment: real-time AI translation.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "KR_SMARTTECH_2026",
+    "title": "Agora Unveils Next-Generation AI Agent-Based Telephone Survey Solution at Smart Tech Korea",
+    "publisher": "Agora Korea",
+    "date": "2026-06-17",
+    "type": "korea_product_release",
+    "url": "https://www.agora.io/kr/news/agora-unveils-next-generation-ai-agent-based-telephone-survey-solution-at-smart-tech-korea/",
+    "reliability": "primary_company",
+    "notes": "Korea Voice AI telephone survey solution.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "KR_XOSOFT_2025",
+    "title": "XOsoft and Agora strategic MOU for AIoT conversational services",
+    "publisher": "Agora Korea",
+    "date": "2025-12-01",
+    "type": "korea_partnership_release",
+    "url": "https://prod.agora.io/kr/news/egseuosopeuteu-naseudag-sangjangsa-agorawa-aiot-giban-daehwahyeong-seobiseu-mou-cegyeol-geulrobeol-ai-sijang-gongryag-gasog",
+    "reliability": "primary_company",
+    "notes": "MOU/joint-development; not a completed ROI case.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "KR_SOMA",
+    "title": "Soma Success Story",
+    "publisher": "Agora",
+    "date": "",
+    "type": "korea_customer_case",
+    "url": "https://prod.agora.io/kr/success-stories/soma",
+    "reliability": "primary_company_case",
+    "notes": "Korean virtual office / Unity RTC case.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "CASE_SALESROOM",
+    "title": "Salesroom Success Story",
+    "publisher": "Agora",
+    "date": "",
+    "type": "customer_case",
+    "url": "https://www.agora.io/kr/success-stories/salesroom/",
+    "reliability": "primary_company_case",
+    "notes": "AI sales meeting platform.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "CASE_ENGLISHCENTRAL",
+    "title": "EnglishCentral Success Story",
+    "publisher": "Agora",
+    "date": "",
+    "type": "customer_case",
+    "url": "https://www.agora.io/kr/success-stories/englishcentral/",
+    "reliability": "primary_company_case",
+    "notes": "Education/live tutoring.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "CASE_KRIYAM",
+    "title": "Kriyam Success Story",
+    "publisher": "Agora",
+    "date": "",
+    "type": "customer_case",
+    "url": "https://prod.agora.io/en/success-stories/kriyam",
+    "reliability": "primary_company_case",
+    "notes": "BFSI video verification.",
+    "last_verified": "2026-08-28"
+  },
+  {
+    "source_id": "CASE_MIKO",
+    "title": "Miko Success Story",
+    "publisher": "Agora",
+    "date": "",
+    "type": "customer_case",
+    "url": "https://www.agora.io/kr/success-stories/miko/",
+    "reliability": "primary_company_case",
+    "notes": "IoT/robot video and signaling.",
+    "last_verified": "2026-08-28"
+  }
+]

@@ -1,0 +1,33 @@
+﻿doc_id,path,category,market,priority,tags,source_ids,bytes
+README,00_meta/HOW_TO_RETRIEVE.md,readme,,,,,701
+META_RETRIEVAL_CONVENTIONS,00_meta/retrieval_conventions.md,meta,global,critical,[],[],981
+CLAIMS_GUARDRAILS,01_company/claims_and_guardrails.md,guardrail,global,critical,"[claims, guardrail, reviewer]","[SEC_20F_2025, IR_Q1_2026, IR_Q2_2026, KR_HANYANG_2026, KR_SMARTTECH_2026, KR_XOSOFT_2025]",1482
+COMPANY_PROFILE,01_company/company_profile.md,company,global,critical,"[company, platform, RTE, conversational_ai, NASDAQ_API]","[SEC_20F_2025, AGORA_PRODUCTS]",1113
+CURRENT_STRATEGY_2026,01_company/current_strategy_2026.md,company_strategy,global,critical,"[2026, voice_ai, agent_studio, sales, customer_service]","[IR_Q1_2026, IR_Q2_2026, AGORA_AI_SALES, AGORA_AI_CS]",1330
+FINANCIAL_SNAPSHOT,01_company/financial_snapshot.md,company_financials,global,medium,"[financials, Q1_2026, Q2_2026]","[IR_Q1_2026, IR_Q2_2026]",928
+KOREA_BUSINESS_CONTEXT,01_company/korea_business_context.md,company_strategy,KR,critical,"[korea, education, survey, AIoT, enterprise]","[KR_HANYANG_2026, KR_SMARTTECH_2026, KR_XOSOFT_2025, KR_SOMA]",1554
+FILING_2025_20F,02_filings/2025_20F_summary.md,filing,global,high,"[20F, FY2025, SEC]",[SEC_20F_2025],636
+FILING_2026_Q1,02_filings/2026_Q1_summary.md,filing,global,high,"[2026Q1, Agent_Studio, financials]",[IR_Q1_2026],799
+FILING_2026_Q2,02_filings/2026_Q2_summary.md,filing,global,critical,"[2026Q2, voice_ai, buyer_interest, survey, customer_service]",[IR_Q2_2026],866
+PRODUCT_CONVERSATIONAL_AI,03_products/conversational_ai.md,product,global,critical,"[voice_ai, Agent_Studio, sales, customer_service, STT, TTS, LLM]","[AGORA_CONV_AI, AGORA_AI_SALES, AGORA_AI_CS, IR_Q1_2026, IR_Q2_2026]",1217
+PRODUCT_PHYSICAL_AI_IOT,03_products/physical_ai_iot.md,product,KR,high,"[AIoT, robot, smart_device, physical_ai]","[AGORA_DEVICE_KIT, KR_XOSOFT_2025, CASE_MIKO]",908
+PRODUCT_PORTFOLIO,03_products/product_portfolio.md,product,global,critical,"[product, portfolio]",[AGORA_PRODUCTS],700
+PRODUCT_RTC_MEDIA,03_products/rtc_media.md,product,global,high,"[RTC, video, voice, streaming, signaling]","[AGORA_PRODUCTS, CASE_SALESROOM, CASE_KRIYAM, KR_SOMA]",785
+PRODUCT_SECURITY_COMPLIANCE,03_products/security_compliance.md,product,global,high,"[security, compliance, enterprise, BFSI]",[AGORA_DEVICE_KIT],612
+CASE_GLOBAL_ENGLISHCENTRAL,04_cases/global/englishcentral_education.md,case,GLOBAL,high,"[education, video, conversion, UX]",[CASE_ENGLISHCENTRAL],702
+CASE_GLOBAL_KRIYAM,04_cases/global/kriyam_bfsi.md,case,GLOBAL,high,"[BFSI, KYC, insurance, video, recording]",[CASE_KRIYAM],656
+CASE_GLOBAL_MIKO,04_cases/global/miko_iot.md,case,GLOBAL,high,"[IoT, robot, video, signaling]",[CASE_MIKO],611
+CASE_GLOBAL_SALESROOM,04_cases/global/salesroom_sales_engagement.md,case,GLOBAL,high,"[sales, AI_meeting, video, conversion]",[CASE_SALESROOM],836
+CASE_KR_HANYANG,04_cases/korea/hanyang_university_translation.md,case,KR,high,"[education, translation, korea, AI]",[KR_HANYANG_2026],1077
+CASE_KR_SMARTTECH_SURVEY,04_cases/korea/smarttech_voice_survey.md,case,KR,high,"[voice_ai, survey, market_research, korea]",[KR_SMARTTECH_2026],883
+CASE_KR_SOMA,04_cases/korea/soma_virtual_office.md,case,KR,high,"[Unity, virtual_office, enterprise, korea]",[KR_SOMA],711
+CASE_KR_XOSOFT,04_cases/korea/xosoft_aiot_mou.md,case,KR,high,"[AIoT, robot, education, senior_care, korea]",[KR_XOSOFT_2025],785
+EMAIL_GENERATION_CONTEXT,05_sales/email_generation_context.md,agent_contract,global,critical,"[writer, strategist, context]",[],1144
+EVIDENCE_SELECTION_RULES,05_sales/evidence_selection_rules.md,sales_policy,global,critical,"[evidence, selection]",[],978
+INDUSTRY_SOLUTION_MAP,05_sales/industry_solution_map.md,sales_synthesis,global,high,"[industry, mapping]",[],1156
+PERSONA_ANGLE_MAP,05_sales/persona_angle_map.md,sales_synthesis,global,high,"[persona, department]",[],831
+SALES_CLAIM_LIBRARY,05_sales/sales_claim_library.md,sales,global,critical,"[claim, sales, writer]","[SEC_20F_2025, IR_Q1_2026, IR_Q2_2026, KR_HANYANG_2026, KR_SMARTTECH_2026, KR_XOSOFT_2025, CASE_SALESROOM, CASE_KRIYAM]",1837
+EXAMPLE_BFSI,06_examples/bfsi_retrieval_example.md,example,global,low,"[BFSI, KYC]",[],495
+EXAMPLE_EDUCATION,06_examples/education_retrieval_example.md,example,global,low,"[education, translation]",[],493
+EXAMPLE_LUXURY_RETAIL,06_examples/luxury_retail_retrieval_example.md,example,global,low,"[luxury, retail, CRM]",[],861
+README,README.md,readme,,,,,1458

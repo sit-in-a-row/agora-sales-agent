@@ -1,0 +1,27 @@
+{
+  "grouping_window_minutes": 20,
+  "research_horizon_months": 18,
+  "quality_threshold": 75,
+  "normal_threshold": 45,
+  "quality_confidence_floor": 0.7,
+  "quality_requires_human_review": true,
+  "rewrite_max": 0,
+  "supplemental_research_max": 1,
+  "concurrency": 4,
+  "models": {
+    "entity": "gpt-5.6-luna",
+    "entity_web": "gpt-5.6-terra",
+    "research": "gpt-5.6-terra",
+    "scoring": "gpt-5.6-terra",
+    "strategy": "gpt-5.6-terra",
+    "writer": "gpt-5.6-terra",
+    "review_normal": "gpt-5.6-terra",
+    "review_quality": "gpt-5.6-sol"
+  },
+  "email_generation_mode": "deterministic_template",
+  "generate_email_for": [
+    "QUALITY",
+    "NORMAL",
+    "TRASH"
+  ]
+}
